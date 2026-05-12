@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruben Dario Chura Tola | WoW 3.3.5a</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: radial-gradient(circle at 10% 30%, #0a0f1a, #03060c);
+            font-family: 'Rajdhani', 'Inter', sans-serif;
+            color: #eef5ff;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+        }
+        .container { max-width: 1300px; margin: 0 auto; display: flex; flex-direction: column; gap: 2rem; }
+        .card {
+            background: rgba(15, 25, 45, 0.65);
+            backdrop-filter: blur(12px);
+            border-radius: 2rem;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            padding: 1.8rem;
+            transition: transform 0.25s ease;
+        }
+        .card:hover { transform: translateY(-4px); border-color: rgba(0, 200, 255, 0.5); }
+        h1, h2, h3 { font-family: 'Bebas Neue', cursive; letter-spacing: 1px; }
+        .gradient-text { background: linear-gradient(135deg, #3b82f6, #1e3a5f, #0f2c1f); background-clip: text; -webkit-background-clip: text; color: transparent; }
+        h2 { font-size: 2rem; margin-bottom: 1rem; border-left: 5px solid #0a9b7c; padding-left: 1rem; }
+        .badge { background: #0f212ecc; padding: 0.2rem 0.9rem; border-radius: 40px; font-size: 0.8rem; border: 1px solid #2c6275; display: inline-block; }
+        .info-list { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+        .info-item { background: #0b1422aa; border-radius: 1.5rem; padding: 0.6rem 1.3rem; display: flex; align-items: center; gap: 10px; }
+        .info-item i { color: #2dd4bf; }
+        .color-box { display: inline-flex; gap: 8px; margin-left: 8px; }
+        .dot { width: 24px; height: 24px; border-radius: 50%; display: inline-block; border: 1px solid white; }
+        .dot.blue { background: #1e3a8a; }
+        .dot.black { background: #111827; }
+        .dot.darkgreen { background: #14532d; }
+        .mission-vision { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 0.5rem; }
+        .mv-card { flex: 1; background: rgba(0, 0, 0, 0.35); border-radius: 1.5rem; padding: 1.5rem; border-left: 4px solid #2c9b77; }
+        .video-container { text-align: center; margin: 1rem 0; }
+        .video-link {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff0000, #cc0000);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 1rem 0;
+            transition: transform 0.2s;
+        }
+        .video-link:hover { transform: scale(1.05); }
+        .lyrics { background: #03060cee; padding: 1rem; border-radius: 1.2rem; max-height: 180px; overflow-y: auto; font-size: 0.9rem; border: 1px solid #2e6f5b; }
+        .wow-profile { display: flex; flex-wrap: wrap; gap: 1.8rem; margin-top: 1rem; }
+        .char-card { flex: 1; background: #0b1427; border-radius: 1.5rem; padding: 1.2rem; text-align: center; }
+        .char-card img { width: 130px; height: 130px; object-fit: cover; border-radius: 50%; border: 3px solid #26c6a8; margin-bottom: 0.8rem; }
+        .char-card .paladin-img { width: 90px; height: 90px; margin-top: 10px; border: 2px solid gold; }
+        .achievements { flex: 2; background: #0b1427; border-radius: 1.5rem; padding: 1.2rem; }
+        .logro-item { display: flex; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid #2e4a62; }
+        .logro-item i { color: #f5b042; width: 32px; }
+        .carousel-container { width: 100%; overflow: hidden; margin-top: 1rem; }
+        .carousel-track { display: flex; animation: scroll-left 20s linear infinite; gap: 1.5rem; }
+        .carousel-track img { width: 280px; height: 180px; object-fit: cover; border-radius: 1rem; border: 2px solid #2c9b77; }
+        .carousel-track:hover { animation-play-state: paused; }
+        @keyframes scroll-left {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .socials { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem; }
+        .social-link { background: #0f172ab3; border-radius: 50px; padding: 0.7rem 1.5rem; color: white; text-decoration: none; display: inline-flex; align-items: center; gap: 10px; transition: all 0.2s; border: 1px solid #3f7e6e; }
+        .social-link:hover { background: #1f3b4b; border-color: #2dd4bf; }
+        footer { text-align: center; margin-top: 1rem; opacity: 0.7; font-size: 0.8rem; padding: 1rem; }
+        @media (max-width: 768px) {
+            .carousel-track img { width: 180px; height: 120px; }
+        }
+        hr { border-color: #2c9b7733; margin: 0.5rem 0; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- ========== DATOS GENERALES ========== -->
+    <div class="card">
+        <div style="display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center;">
+            <h1>✨ Ruben Dario <span class="gradient-text">Chura Tola</span></h1>
+            <div class="badge"><i class="fas fa-star"></i> Paladin Retribution ⚔️ | Capricornio ♑</div>
+        </div>
+        <div class="info-list">
+            <div class="info-item"><i class="fas fa-signature"></i> <strong>Nombre:</strong> Ruben Dario Chura Tola</div>
+            <div class="info-item"><i class="fas fa-star-of-life"></i> <strong>Signo:</strong> Capricornio ♑</div>
+            <div class="info-item"><i class="fas fa-palette"></i> <strong>Colores fav:</strong> 
+                <div class="color-box">
+                    <span class="dot blue"></span>
+                    <span class="dot black"></span>
+                    <span class="dot darkgreen"></span>
+                    <span>Azul · Negro · Verde oscuro</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== MISIÓN Y VISIÓN ========== -->
+    <div class="card">
+        <h2><i class="fas fa-bullseye"></i> Misión & Visión</h2>
+        <div class="mission-vision">
+            <div class="mv-card">
+                <i class="fas fa-rocket" style="font-size: 2rem; color: #2dd4bf;"></i>
+                <h3 style="margin: 10px 0;">🚀 Misión</h3>
+                <p>Convertir cada reto en una oportunidad para crecer, aplicando la disciplina de Capricornio y la fuerza de un paladín para construir soluciones tecnológicas que conecten a las personas.</p>
+            </div>
+            <div class="mv-card">
+                <i class="fas fa-eye" style="font-size: 2rem; color: #3b82f6;"></i>
+                <h3 style="margin: 10px 0;">🌟 Visión</h3>
+                <p> inspirando a otros con mi trayectoria en WoW 3.3.5a, demostrando que con fe y esfuerzo se conquista al Rey Exánime.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== MÚSICA FAVORITA ========== -->
+    <div class="card">
+        <h2><i class="fas fa-headphones"></i> 🎵 Mi música favorita</h2>
+        <div class="video-container">
+            <a href="https://www.youtube.com/watch?v=lcX1PvER0Cc" target="_blank" class="video-link">
+                <i class="fab fa-youtube"></i> VER VIDEO EN YOUTUBE
+            </a>
+            <p style="margin-top: 10px;">🎶 Haz clic para escuchar mi canción favorita</p>
+        </div>
+        <div class="lyrics">
+            <strong><i class="fas fa-music"></i> Letra (fragmento):</strong><br>
+            "Antes de que la historia comience
+¿Es tan acaso un pecado
+Para mí el tomar lo que es mío
+Hasta el fin de los tiempos?
+Éramos más que amigos
+Antes de que la historia acabara
+Y tomaré lo que es mío
+Crearé lo que Dios nunca diseñarías..."<br>
+            <span style="color: #8bc6d4;">🎤 Avenged Sevenfold - A Little Piece of Heaven</span>
+        </div>
+    </div>
+
+    <!-- ========== WORLD OF WARCRAFT 3.3.5a ========== -->
+    <div class="card">
+        <h2><i class="fas fa-dragon"></i> ⚔️ logros de mi pj y mi personaje favorito 3.3.5a</h2>
+        <div class="wow-profile">
+            <div class="char-card">
+                <!-- IMAGEN LICH KING DESDE ARCHIVO LOCAL: lk.jpg -->
+                <img src="lk.jpg" alt="Arthas Lich King">
+                <h3>❄️ Arthas Menethil</h3>
+                <div class="badge">Personaje Favorito · Rey Exánime</div>
+                <p style="margin: 12px 0;"><i class="fas fa-gavel"></i> <strong>Mi personaje:</strong> Paladín Retribution</p>
+                <!-- IMAGEN TU PALADÍN DESDE ARCHIVO LOCAL: pj.jpg -->
+                <img class="paladin-img" src="pj.jpg" alt="Mi Paladín">
+                <p style="margin-top: 8px;"><i class="fas fa-shield-halberd"></i> "La luz guía mi martillo"</p>
+            </div>
+            <div class="achievements">
+                <h3><i class="fas fa-medal"></i> 🏆 Logros destacados WoW 3.3.5a</h3>
+                <div class="logro-item"><i class="fas fa-skull"></i> <span><strong>Héroe de la Caída del Rey Exánime (25H)</strong> · Glorioso del Bastión de Icrown</span></div>
+                <div class="logro-item"><i class="fas fa-trophy"></i> <span><strong>Gloria del Cruzado Argenta (10/25)</strong> · Caballo de la Muerte</span></div>
+                <div class="logro-item"><i class="fas fa-crown"></i> <span><strong>Asesino de Espías de la Plaga</strong> · Título "Asesino de Espías"</span></div>
+                <div class="logro-item"><i class="fas fa-dice-d6"></i> <span><strong>Gladiador Despiadado</strong> · Rating 2400+ en 3v3 (Temporada 8)</span></div>
+                <div class="logro-item"><i class="fas fa-scroll"></i> <span><strong>El Paladín del Alba</strong> · Legendario Shadowmourne completado</span></div>
+                <div class="logro-item"><i class="fas fa-dragon"></i> <span><strong>Reducto de Alamuerte 25H</strong> · Logro "Un minuto para la medianoche"</span></div>
+                <div class="logro-item"><i class="fas fa-flag-checkered"></i> <span><strong>Inmortal/Indestructible</strong> · Naxxramas 25H sin muertos</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== MIS JUEGOS FAVORITOS - CARRUSEL ========== -->
+    <div class="card">
+        <h2><i class="fas fa-gamepad"></i> 🎮 Mis Juegos Favoritos</h2>
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <!-- IMAGEN DOTA 2 DESDE ARCHIVO LOCAL: dota 2.jpg -->
+                <img src="dota 2.jpg" alt="Dota 2">
+                <!-- IMAGEN WOW DESDE ARCHIVO LOCAL: wow.jpg -->
+                <img src="wow.jpg" alt="World of Warcraft">
+                <!-- DUPLICADOS para efecto infinito -->
+                <img src="dota 2.jpg" alt="Dota 2">
+                <img src="wow.jpg" alt="World of Warcraft">
+            </div>
+        </div>
+        <p style="margin-top: 1rem; text-align: center;"><i class="fas fa-arrow-left"></i> <i class="fas fa-arrow-right"></i> ¡Carrusel automático de mis juegos favoritos!</p>
+    </div>
+
+    <!-- ========== REDES SOCIALES ========== -->
+    <div class="card">
+        <h2><i class="fas fa-hashtag"></i> mis redes</h2>
+        <div class="socials">
+            
+            <a href="#" class="social-link" id="instaLink" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" class="social-link" id="githubLink" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="social-link" id="discordLink" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+            <a href="#" class="social-link" id="facebookLink" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+        </div>
+        <hr>
+        <div style="text-align: center;">
+            <i class="fas fa-envelope"></i> ruben.chura@ejemplo.com
+        </div>
+    </div>
+
+    <footer>
+        <i class="fas fa-code"></i> Ruben Dario Chura Tola · For the Light! ⚔️ · WoW 3.3.5a
+    </footer>
+</div>
+
+<script>
+    // Configurar enlaces de redes sociales (EDÍTALOS CON TUS PERFILES REALES)
+    const socials = {
+        facebook: "https://facebook.com/lucian lota",
+        instagram: "https://instagram.com/rdct666",
+        github: "https://github.com/rrubentc-commits",
+        discord: "https://discord.gg/rdct666"
+    };
+    document.getElementById('facebookLink').href = socials.facebook;
+    document.getElementById('instaLink').href = socials.instagram;
+    document.getElementById('githubLink').href = socials.github;
+    document.getElementById('discordLink').href = socials.discord;
+    
+    console.log("✅ Página LOCAL de Ruben Dario Chura Tola cargada");
+    console.log("📸 Imágenes locales requeridas: lk.jpg, pj.JPG, dota 2.jpg, wow.jpg");
+</script>
+</body>
+</html>
